@@ -8,11 +8,11 @@ public class BluzePage {
     private final WebDriver driver;
 
     // Lokator za element koji prikazuje broj rezultata pretrage
-    private final By searchResultCount = By.cssSelector(".BreadcrumbHolder_breadcrumbHolder__riFtq span > div > span");
+    private final By searchResultCountLocator = By.cssSelector(".BreadcrumbHolder_breadcrumbHolder__riFtq span > div > span");
     // Lokator za prvi oglas u listi na Bluza stranici
     private final By firstAdLocator = By.cssSelector(".AdItem_adOuterHolder__lACeh:nth-child(1) .Link_link__2iGTE[aria-label='link']");
     // Locator za "Dodaj u adresar" dugme
-    private final By addContactButton = By.xpath("//button[@aria-label='Dodaj u adresar']");
+    private final By addContactButtonLocator = By.xpath("//button[@aria-label='Dodaj u adresar']");
 
 
     // Konstruktor
@@ -23,7 +23,7 @@ public class BluzePage {
     // Metod za izdvajanje broja rezultata pretrage
     public int extractSearchResultCount() {
         // Pronalaženje elementa koji sadrži broj rezultata pretrage
-        WebElement searchResultCountElement = driver.findElement(searchResultCount);
+        WebElement searchResultCountElement = driver.findElement(searchResultCountLocator);
 
         // Dobijanje teksta elementa
         String searchResultCountText = searchResultCountElement.getText();
@@ -40,7 +40,7 @@ public class BluzePage {
 
     // Klik na "Dodaj u adresar" dugme
     public void clickAddToAddressBook() {
-        WebElement addToAddressElement = driver.findElement(addContactButton);
+        WebElement addToAddressElement = driver.findElement(addContactButtonLocator);
         addToAddressElement.click();
     }
 }

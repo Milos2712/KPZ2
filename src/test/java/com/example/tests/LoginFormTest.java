@@ -13,7 +13,7 @@ import java.time.Duration;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Testiranje funkcionalnosti dodavanja oglasa iz lista oglasa u adresar na sajtu KupujemProdajem.
+ * Testiranje funkcionalnosti dodavanja oglasa u adresar na sajtu KupujemProdajem.
  * Ovaj test proverava da li se pri pokušaju dodavanja oglasa u adresar otvara forma za prijavljivanje korisnika.
  */
 
@@ -56,17 +56,17 @@ public class LoginFormTest {
         // Klik na "Dodaj u adresar" dugme iz oglasa
         bluzePage.clickAddToAddressBook();
 
-        // Poziv metode za proveru da li je naslov modala za logovanje prikazan
+        // Poziv metode za proveru da li je naslov forme za logovanje prikazan
         LoginForm loginForm = new LoginForm(driver);
-        boolean isModalDisplayed = loginForm.isLoginModalDisplayed();
+        boolean isFormDisplayed = loginForm.isLoginFormDisplayed();
 
-        // Asertacija da li je naslov modala prikazan
-        assertTrue("Forma za logovanje nije prikazana", isModalDisplayed);
+        // Asertacija da li je naslov forme prikazan
+        assertTrue("Forma za logovanje nije prikazana", isFormDisplayed);
     }
 
     @After
     public void tearDown() {
-        // Close the browser
+        // Zatvaranje pretraživača
         driver.quit();
     }
 }
